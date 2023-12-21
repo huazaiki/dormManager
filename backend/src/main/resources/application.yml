@@ -3,3 +3,16 @@ spring:
     user:
       name: user
       password: 123456
+    jwt:
+      key: sdaiqhx9123kasd2cxv90siu903ho25ijo
+      expire: 3
+  data:
+    redis:
+      host: 8.222.145.192
+      port: 6379
+      database: 0
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/
+    username: root
+    password: 123456
