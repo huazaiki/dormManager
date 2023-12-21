@@ -1,8 +1,10 @@
 package com.dormManager.backend.config;
 
 import com.dormManager.backend.entity.RestBean;
+import com.dormManager.backend.entity.dto.Account;
 import com.dormManager.backend.entity.vo.response.AuthorizeVO;
 import com.dormManager.backend.filter.JwtAuthorizeFilter;
+import com.dormManager.backend.service.AccountService;
 import com.dormManager.backend.utils.JwtUtils;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
@@ -55,6 +57,9 @@ public class SecurityConfiguration {
 
     @Resource
     JwtAuthorizeFilter jwtAuthorizeFilter;
+
+    @Resource
+    AccountService accountService;
 
     /**
      * 配置 HTTP 请求的安全过滤器链。
@@ -166,12 +171,15 @@ public class SecurityConfiguration {
         response.setCharacterEncoding("UTF-8");
 
         User user = (User) authentication.getPrincipal();
-        String token = utils.createJwt(user, 1, "huazaiki");
+        Account account = accountService.findAccountByNameOrEmail(user.getUsername());
+
+        String token = utils.createJwt(user, account.getId(), account.getUsername());
+
         AuthorizeVO vo = new AuthorizeVO();
         vo.setExpireTime(utils.expireTime());
-        vo.setRole("");
+        vo.setRole(account.getRole());
         vo.setToken(token);
-        vo.setUsername(user.getUsername());
+        vo.setUsername(account.getUsername());
 
         response.getWriter().write(RestBean.success(vo).asJsonString());
     }
