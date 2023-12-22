@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <router-view/>
+    登录界面
   </div>
 </template>
 
