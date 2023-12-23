@@ -16,12 +16,24 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+/**
+ * JWT授权过滤器，用于验证和解析请求中的JWT令牌，并将用户信息添加到Spring Security上下文中。
+ */
 @Component
 public class JwtAuthorizeFilter extends OncePerRequestFilter {
 
     @Resource
     JwtUtils utils;
 
+    /**
+     * 在每个请求中执行的方法，用于验证和解析JWT令牌，并将用户信息添加到Spring Security上下文中。
+     *
+     * @param request     HttpServletRequest对象
+     * @param response    HttpServletResponse对象
+     * @param filterChain FilterChain对象，用于继续请求的处理流程
+     * @throws ServletException 如果发生与servlet相关的错误
+     * @throws IOException      如果发生I/O错误
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
