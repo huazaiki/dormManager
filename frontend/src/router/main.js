@@ -14,6 +14,10 @@ const router = createRouter({
                     component: () => import('@/views/welcome/LoginPage.vue')
                 }
             ]
+        }, {
+            path: '/index',
+            name: 'index',
+            component: () => import('@/views/IndexView.vue')
         }
     ]
 })

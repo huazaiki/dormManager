@@ -16,3 +16,8 @@ spring:
     url: jdbc:mysql://localhost:3306/dorm_manager
     username: root
     password: root
+  web:
+    cors:
+      origin: '*'
+      credentials: false
+      methods: '*'
