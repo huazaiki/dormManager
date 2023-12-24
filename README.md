@@ -3,7 +3,7 @@ HEBEU SE21-3 邸企华
 大三上学期JavaWeb课设作业--宿舍管理系统
 
 小组成员: [huazaiki](https://github.com/huazaiki)、
-        [BeeJimmys](https://github.com/huazaiki)、
+        [BeeJimmys](https://github.com/BeeJimmys)、
         [SuzumiyaJueYi](https://github.com/SuzumiyaJueYi)、
         [GALI]()<br>
 
