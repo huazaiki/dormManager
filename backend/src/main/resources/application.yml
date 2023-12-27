@@ -16,3 +16,17 @@ spring:
     url: jdbc:mysql://localhost:3306/dorm_manager
     username: root
     password: root
+  web:
+    cors:
+      origin: '*'
+      credentials: false
+      methods: '*'
+  mail:
+    host: smtp.126.com
+    username: dqihua03@126.com
+    password: ICKALMSGIZHXCNJP
+  rabbitmq:
+    addresses: localhost
+    username: admin
+    password: admin
+    virtual-host: /
