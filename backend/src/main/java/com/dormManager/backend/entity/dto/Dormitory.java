@@ -16,7 +16,7 @@ public class Dormitory {
 
     String BuildingNumber;
     String DormitoryNumber;
-    String Capacity;
-    String OccupiedBeds;
-    String TotalBeds;
+    Integer Capacity;
+    Integer OccupiedBeds;
+    Integer TotalBeds;
 }
