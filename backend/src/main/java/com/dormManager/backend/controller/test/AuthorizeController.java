@@ -1,4 +1,4 @@
-package com.dormManager.backend.controller;
+package com.dormManager.backend.controller.test;
 
 import com.dormManager.backend.entity.RestBean;
 import com.dormManager.backend.entity.vo.request.EmailRegisterVO;
