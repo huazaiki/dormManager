@@ -5,5 +5,5 @@ import com.dormManager.backend.entity.dto.StudentBed;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface StudentBedMapper extends BaseMapper<StudentBed> {
+public interface StudentDormitoryMapper extends BaseMapper<StudentBed> {
 }

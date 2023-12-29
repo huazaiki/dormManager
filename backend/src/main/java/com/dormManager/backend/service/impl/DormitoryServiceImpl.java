@@ -1,6 +1,7 @@
 package com.dormManager.backend.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.dormManager.backend.entity.dto.Dormitory;
 import com.dormManager.backend.mapper.DormitoryMapper;
@@ -29,9 +30,10 @@ public class DormitoryServiceImpl extends ServiceImpl<DormitoryMapper, Dormitory
         return null;
     }
 
-    public String updateDormitoryByBuildingNumber(String building_number) {
-        if (building_number == null) return "宿舍不存在";
-        dormMapper.update(new QueryWrapper<Dormitory>().eq("building_number", building_number));
+    public String updateDormitoryByBuildingNumber(String old_building_number, String new_building_number) {
+        if (old_building_number == null) return "宿舍不存在";
+        dormMapper.update(new UpdateWrapper<Dormitory>()
+                .eq("building_number", old_building_number).set("building_number", new_building_number));
         return null;
     }
 

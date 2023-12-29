@@ -7,7 +7,7 @@ import com.dormManager.backend.entity.dto.StudentBed;
 import com.dormManager.backend.entity.vo.response.StudentVO;
 import com.dormManager.backend.mapper.StudentMapper;
 import com.dormManager.backend.service.DormitoryService;
-import com.dormManager.backend.service.StudentBedService;
+import com.dormManager.backend.service.StudentDormitoryService;
 import com.dormManager.backend.service.StudentService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     DormitoryService dormitoryService;
 
     @Resource
-    StudentBedService studentBedService;
+    StudentDormitoryService studentBedService;
 
     /**
      * 查询学生的详细信息，包括姓名、所在宿舍号和床位号。
@@ -76,6 +76,28 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
             int deleteCount = stuMapper.deleteById(student_id);
 
             if (deleteCount > 0) {
+                return null; // 表示添加成功
+            } else {
+                return "删除学生信息失败";
+            }
+        } catch (Exception e) {
+            // 异常处理
+            return "删除学生信息发生异常：" + e.getMessage();
+        }
+    }
+
+    public String updateStudent(Student student) {
+        try {
+
+            Integer id = student.getStudent_id();
+
+            // 参数校验
+            if(stuMapper.selectById(id) == null) return "学生不存在";
+
+            // 插入学生信息
+            int updateCount = stuMapper.updateById(student);
+
+            if (updateCount > 0) {
                 return null; // 表示添加成功
             } else {
                 return "删除学生信息失败";

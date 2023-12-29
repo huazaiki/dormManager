@@ -11,7 +11,7 @@ public interface DormitoryService extends IService<Dormitory> {
 
     public String updateDormitory(Dormitory dormitory);
 
-    public String updateDormitoryByBuildingNumber(String building_number);
+    public String updateDormitoryByBuildingNumber(String old_building_number, String new_building_number);
 
     public String deleteDormitory(Integer dormitory_id);
 
