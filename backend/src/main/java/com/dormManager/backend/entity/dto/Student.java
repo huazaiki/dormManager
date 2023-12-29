@@ -11,13 +11,13 @@ import lombok.Data;
 @AllArgsConstructor
 public class Student {
 
-    @TableId(type = IdType.INPUT)
-    Integer StudentID;
+    @TableId("student_id")
+    Integer student_id;
 
-    String Name;
-    String StudentNumber;
-    String Gender;
-    String Email;
-    Integer OccupancyStatus;
+    String name;
+    String student_number;
+    String gender;
+    String email;
+    Integer occupancy_status;
 
 }

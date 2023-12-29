@@ -12,10 +12,10 @@ import java.util.Date;
 @AllArgsConstructor
 public class StudentDormitory {
 
-    @TableId("AssignmentID")
-    Integer AssignmentID;
+    @TableId("assignment_id")
+    Integer assignment_id;
 
-    Integer StudentID;
-    Integer DormitoryID;
-    Date AssignmentDate;
+    Integer student_id;
+    Integer dormitory_id;
+    Date assignment_date;
 }

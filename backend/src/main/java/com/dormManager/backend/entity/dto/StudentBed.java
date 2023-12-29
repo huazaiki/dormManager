@@ -10,10 +10,9 @@ import lombok.Data;
 @AllArgsConstructor
 public class StudentBed {
 
-    @TableId
-    Integer AssignmentID;
+    @TableId("assignment_id")
+    Integer assignment_id;
 
-    Integer StudentID;
-    Integer DormitoryID;
-    Integer BedNumber;
+    Integer student_id;
+    Integer dormitory_id;
 }
